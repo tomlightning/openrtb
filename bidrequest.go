@@ -37,7 +37,7 @@ type BidRequest struct {
 	BlockedApps       []string          `json:"bapp,omitempty"`    // Block list of applications by their platform-specific exchange-independent application identifiers. On Android, these should be bundle or package names (e.g., com.foo.mygame).  On iOS, these are numeric IDs.
 	Source            *Source           `json:"source,omitempty"`  // A Source object that provides data about the inventory source and which entity makes the final decision
 	Regulations       *Regulations      `json:"regs,omitempty"`
-	Ext               json.RawMessage   `json:"ext"`
+	Ext               json.RawMessage   `json:"ext,omitempty"`
 }
 
 // Validate the request
