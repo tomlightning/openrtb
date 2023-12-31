@@ -427,7 +427,7 @@ const (
 )
 
 // BannerType as defined in section 5.2.
-type BannerType int
+type BannerType int8
 
 // 5.2 Banner Ad Types
 const (
@@ -438,7 +438,7 @@ const (
 )
 
 // CreativeAttribute as defined in section 5.3.
-type CreativeAttribute int
+type CreativeAttribute int8
 
 // 5.3 Creative Attributes
 const (
@@ -462,7 +462,7 @@ const (
 )
 
 // AdPosition as defined in section 5.4.
-type AdPosition int
+type AdPosition int8
 
 // 5.4 Ad Position
 const (
@@ -476,7 +476,7 @@ const (
 )
 
 // ExpDir as defined in section 5.5.
-type ExpDir int
+type ExpDir int8
 
 // 5.5 Expandable Direction
 const (
@@ -489,7 +489,7 @@ const (
 )
 
 // APIFramework as defined in Adcom1.0.
-type APIFramework int
+type APIFramework int8
 
 // API Frameworks options as defined in Adcom1.0.
 const (
@@ -506,7 +506,7 @@ const (
 )
 
 // VideoLinearity as defined in section 5.7.
-type VideoLinearity int
+type VideoLinearity int8
 
 // 5.7 Video Linearity
 const (
@@ -516,7 +516,7 @@ const (
 )
 
 // Protocol as defined in section 5.8.
-type Protocol int
+type Protocol int8
 
 // 5.8 Video and Audio Bid Response Protocols
 const (
@@ -534,7 +534,7 @@ const (
 )
 
 // VideoPlacement as defined in section 5.9.
-type VideoPlacement int
+type VideoPlacement int8
 
 // Video Placement Types
 const (
@@ -547,7 +547,7 @@ const (
 )
 
 // VideoPlayback as defined in section 5.10.
-type VideoPlayback int
+type VideoPlayback int8
 
 // 5.10 Video Playback Methods
 const (
@@ -561,7 +561,7 @@ const (
 )
 
 // StartDelay as defined in section 5.12.
-type StartDelay int
+type StartDelay int16
 
 // 5.12 Video Start Delay
 const (
@@ -571,7 +571,7 @@ const (
 )
 
 // ProductionQuality as defined in section 5.13.
-type ProductionQuality int
+type ProductionQuality int8
 
 // 5.13 Video Quality
 const (
@@ -582,7 +582,7 @@ const (
 )
 
 // CompanionType as defined in section 5.14.
-type CompanionType int
+type CompanionType int8
 
 // 5.14  Companion Types
 const (
@@ -593,7 +593,7 @@ const (
 )
 
 // ContentDelivery as defined in section 5.15.
-type ContentDelivery int
+type ContentDelivery int8
 
 // 5.15 Content Delivery Methods
 const (
@@ -604,7 +604,7 @@ const (
 )
 
 // FeedType as defined in section 5.16.
-type FeedType int
+type FeedType int8
 
 // 5.16 Feed Types
 const (
@@ -615,7 +615,7 @@ const (
 )
 
 // VolumeNorm as defined in section 5.17.
-type VolumeNorm int
+type VolumeNorm int8
 
 // 5.17 Volume Normalization Modes
 const (
@@ -627,7 +627,7 @@ const (
 )
 
 // ContentContext as defined in section 5.18.
-type ContentContext int
+type ContentContext int8
 
 // UnmarshalJSON implements json.Unmarshaler
 func (n *ContentContext) UnmarshalJSON(data []byte) (err error) {
@@ -658,7 +658,7 @@ const (
 )
 
 // IQGRating as defined in section 5.19.
-type IQGRating int
+type IQGRating int8
 
 // 5.19 IQG Media Ratings
 const (
@@ -669,7 +669,7 @@ const (
 )
 
 // LocationType as defined in section 5.20.
-type LocationType int
+type LocationType int8
 
 // 5.20 Location Type
 const (
@@ -680,7 +680,7 @@ const (
 )
 
 // DeviceType as defined in section 5.21.
-type DeviceType int
+type DeviceType int8
 
 // 5.21 Device Type
 const (
@@ -696,7 +696,7 @@ const (
 )
 
 // ConnType as defined in section 5.22.
-type ConnType int
+type ConnType int8
 
 // 5.22 Connection Type
 const (
@@ -710,7 +710,7 @@ const (
 )
 
 // IPLocation as defined in section 5.23.
-type IPLocation int
+type IPLocation int8
 
 // 5.22 IP Location Services
 const (
@@ -722,7 +722,7 @@ const (
 )
 
 // NBR as defined in section 5.24.
-type NBR int
+type NBR int8
 
 // 5.24 No-Bid Reason Codes
 const (
@@ -773,8 +773,8 @@ type Producer ThirdParty
 // (such as IP geo lookup), or by user registration information (for example provided to a publisher
 // through a user registration).
 type Geo struct {
-	Latitude      float64         `json:"lat,omitempty"`           // Latitude from -90 to 90
-	Longitude     float64         `json:"lon,omitempty"`           // Longitude from -180 to 180
+	Latitude      float32         `json:"lat,omitempty"`           // Latitude from -90 to 90
+	Longitude     float32         `json:"lon,omitempty"`           // Longitude from -180 to 180
 	Type          LocationType    `json:"type,omitempty"`          // Indicate the source of the geo data
 	Accuracy      int             `json:"accuracy,omitempty"`      // Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services
 	LastFix       int             `json:"lastfix,omitempty"`       // Number of seconds since this geolocation fix was established.
@@ -785,7 +785,7 @@ type Geo struct {
 	Metro         string          `json:"metro,omitempty"`
 	City          string          `json:"city,omitempty"`
 	ZIP           string          `json:"zip,omitempty"`
-	UTCOffset     int             `json:"utcoffset,omitempty"` // Local time as the number +/- of minutes from UTC
+	UTCOffset     int8            `json:"utcoffset,omitempty"` // Local time as the number +/- of minutes from UTC
 	Ext           json.RawMessage `json:"ext,omitempty"`
 }
 
@@ -831,7 +831,7 @@ type Segment struct {
 // coppa flag signals whether or not the request falls under the United States Federal Trade Commission's
 // regulations for the United States Children's Online Privacy Protection Act ("COPPA").
 type Regulations struct {
-	COPPA int             `json:"coppa"` // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
+	COPPA int8            `json:"coppa"` // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
 	Ext   json.RawMessage `json:"ext,omitempty"`
 }
 
@@ -839,16 +839,16 @@ type Regulations struct {
 // These are typically used in an array for an impression where multiple sizes are permitted.
 // It is recommended that either the w/h pair or the wratio/hratio/wmin set (i.e., for Flex Ads) be specified.
 type Format struct {
-	Width       int             `json:"w,omitempty"`       // Width in device independent pixels (DIPS).
-	Height      int             `json:"h,omitempty"`       // Height in device independent pixels (DIPS).
-	WidthRatio  int             `json:"wratio,omitempty"`  // Relative width when expressing size as a ratio.
-	HeightRatio int             `json:"hration,omitempty"` // Relative height when expressing size as a ratio.
-	WidthMin    int             `json:"wmin,omitempty"`    // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
+	Width       int16           `json:"w,omitempty"`       // Width in device independent pixels (DIPS).
+	Height      int16           `json:"h,omitempty"`       // Height in device independent pixels (DIPS).
+	WidthRatio  int16           `json:"wratio,omitempty"`  // Relative width when expressing size as a ratio.
+	HeightRatio int16           `json:"hration,omitempty"` // Relative height when expressing size as a ratio.
+	WidthMin    int16           `json:"wmin,omitempty"`    // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
 	Ext         json.RawMessage `json:"ext,omitempty"`
 }
 
 // PodSequence identifies the pod sequence field, for use in video content streams with one or more ad pods as defined in Adcom1.0
-type PodSequence int
+type PodSequence int8
 
 // PodSequence options as defined in Adcom1.0
 const (
@@ -858,7 +858,7 @@ const (
 )
 
 // SlotPositionInPod identifies the slot position in pod field, for use in video ad pods as defined in Adcom1.0
-type SlotPositionInPod int
+type SlotPositionInPod int8
 
 // SlotPositionInPod options as defined in Adcom1.0
 const (
@@ -869,7 +869,7 @@ const (
 )
 
 // Type of the creative markup so that it can properly be associated with the right sub-object of the BidRequest.Imp.
-type MarkupType int
+type MarkupType int8
 
 // MarkupType available options
 const (
@@ -881,7 +881,7 @@ const (
 )
 
 // CategoryTaxonomy identifies the taxonomy in effect when content categories as defined in Adcom1.0.
-type CategoryTaxonomy int
+type CategoryTaxonomy int8
 
 // CategoryTaxonomy options as defined in Adcom1.0
 const (
@@ -894,7 +894,7 @@ const (
 )
 
 // VideoPlcmt represents the the various types of video placements in accordance with updated IAB Digital Video Guidelines.
-type VideoPlcmt int
+type VideoPlcmt int8
 
 // Types of video placements derived largely from the IAB Digital Video Guidelines.
 const (

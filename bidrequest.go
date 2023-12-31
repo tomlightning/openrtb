@@ -23,14 +23,14 @@ type BidRequest struct {
 	App               *App              `json:"app,omitempty"`
 	Device            *Device           `json:"device,omitempty"`
 	User              *User             `json:"user,omitempty"`
-	Test              int               `json:"test,omitempty"`    // Indicator of test mode in which auctions are not billable, where 0 = live mode, 1 = test mode
-	AuctionType       int               `json:"at"`                // Auction type, where 1 = First Price, 2 = Second Price Plus. Exchange-specific auction types can be defined using values greater than 500.
-	TimeMax           int               `json:"tmax,omitempty"`    // Maximum amount of time in milliseconds to submit a bid
+	Test              int8              `json:"test,omitempty"`    // Indicator of test mode in which auctions are not billable, where 0 = live mode, 1 = test mode
+	AuctionType       int8              `json:"at"`                // Auction type, where 1 = First Price, 2 = Second Price Plus. Exchange-specific auction types can be defined using values greater than 500.
+	TimeMax           int16             `json:"tmax,omitempty"`    // Maximum amount of time in milliseconds to submit a bid
 	Seats             []string          `json:"wseat,omitempty"`   // Array of buyer seats allowed to bid on this auction
 	BlockedSeats      []string          `json:"bseat,omitempty"`   // Array of buyer seats blocked to bid on this auction
 	Languages         []string          `json:"wlang,omitempty"`   // Allowed list of languages for creatives using ISO-639-1-alpha-2. Omission implies no specific restrictions, but buyers would be advised to consider language attribute in the Device and/or Content objects if available. Only one of wlang or wlangb should be present.
 	LanguagesB        []string          `json:"wlangb,omitempty"`  // Allowed list of languages for creatives using IETF BCP 47I. Omission implies no specific restrictions, but buyers would be advised to consider language attribute in the Device and/or Content objects if available. Only one of wlang or wlangb should be present.
-	AllImpressions    int               `json:"allimps,omitempty"` // Flag to indicate whether exchange can verify that all impressions offered represent all of the impressions available in context, Default: 0
+	AllImpressions    int8              `json:"allimps,omitempty"` // Flag to indicate whether exchange can verify that all impressions offered represent all of the impressions available in context, Default: 0
 	Currencies        []string          `json:"cur,omitempty"`     // Array of allowed currencies
 	BlockedCategories []ContentCategory `json:"bcat,omitempty"`    // Blocked Advertiser Categories.
 	BlockedAdvDomains []string          `json:"badv,omitempty"`    // Array of strings of blocked toplevel domains of advertisers
