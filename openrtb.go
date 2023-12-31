@@ -773,20 +773,20 @@ type Producer ThirdParty
 // (such as IP geo lookup), or by user registration information (for example provided to a publisher
 // through a user registration).
 type Geo struct {
-	Latitude      float32         `json:"lat,omitempty"`           // Latitude from -90 to 90
-	Longitude     float32         `json:"lon,omitempty"`           // Longitude from -180 to 180
-	Type          LocationType    `json:"type,omitempty"`          // Indicate the source of the geo data
-	Accuracy      int             `json:"accuracy,omitempty"`      // Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services
-	LastFix       int             `json:"lastfix,omitempty"`       // Number of seconds since this geolocation fix was established.
-	IPService     IPLocation      `json:"ipservice,omitempty"`     // Service or provider used to determine geolocation from IP address if applicable
+	Ext           json.RawMessage `json:"ext,omitempty"`           // -
 	Country       string          `json:"country,omitempty"`       // Country using ISO 3166-1 Alpha 3
 	Region        string          `json:"region,omitempty"`        // Region using ISO 3166-2
 	RegionFIPS104 string          `json:"regionFIPS104,omitempty"` // Region of a country using FIPS 10-4
-	Metro         string          `json:"metro,omitempty"`
-	City          string          `json:"city,omitempty"`
-	ZIP           string          `json:"zip,omitempty"`
-	UTCOffset     int8            `json:"utcoffset,omitempty"` // Local time as the number +/- of minutes from UTC
-	Ext           json.RawMessage `json:"ext,omitempty"`
+	Metro         string          `json:"metro,omitempty"`         // -
+	City          string          `json:"city,omitempty"`          // -
+	ZIP           string          `json:"zip,omitempty"`           // -
+	Accuracy      int             `json:"accuracy,omitempty"`      // Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services
+	LastFix       int             `json:"lastfix,omitempty"`       // Number of seconds since this geolocation fix was established.
+	Latitude      float32         `json:"lat,omitempty"`           // Latitude from -90 to 90
+	Longitude     float32         `json:"lon,omitempty"`           // Longitude from -180 to 180
+	Type          LocationType    `json:"type,omitempty"`          // Indicate the source of the geo data
+	IPService     IPLocation      `json:"ipservice,omitempty"`     // Service or provider used to determine geolocation from IP address if applicable
+	UTCOffset     int8            `json:"utcoffset,omitempty"`     // Local time as the number +/- of minutes from UTC
 }
 
 // User object contains information known or derived about the human user of the device (i.e., the
@@ -831,20 +831,20 @@ type Segment struct {
 // coppa flag signals whether or not the request falls under the United States Federal Trade Commission's
 // regulations for the United States Children's Online Privacy Protection Act ("COPPA").
 type Regulations struct {
-	COPPA int8            `json:"coppa"` // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
-	Ext   json.RawMessage `json:"ext,omitempty"`
+	Ext   json.RawMessage `json:"ext,omitempty"` // -
+	COPPA int8            `json:"coppa"`         // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
 }
 
 // Format object represents an allowed size (i.e., height and width combination) for a banner impression.
 // These are typically used in an array for an impression where multiple sizes are permitted.
 // It is recommended that either the w/h pair or the wratio/hratio/wmin set (i.e., for Flex Ads) be specified.
 type Format struct {
+	Ext         json.RawMessage `json:"ext,omitempty"`     // -
 	Width       int16           `json:"w,omitempty"`       // Width in device independent pixels (DIPS).
 	Height      int16           `json:"h,omitempty"`       // Height in device independent pixels (DIPS).
 	WidthRatio  int16           `json:"wratio,omitempty"`  // Relative width when expressing size as a ratio.
 	HeightRatio int16           `json:"hration,omitempty"` // Relative height when expressing size as a ratio.
 	WidthMin    int16           `json:"wmin,omitempty"`    // The minimum width in device independent pixels (DIPS) at which the ad will be displayed the size is expressed as a ratio.
-	Ext         json.RawMessage `json:"ext,omitempty"`
 }
 
 // PodSequence identifies the pod sequence field, for use in video content streams with one or more ad pods as defined in Adcom1.0
