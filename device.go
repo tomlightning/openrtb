@@ -9,8 +9,8 @@ type Device struct {
 	UA           string          `json:"ua,omitempty"`             // User agent
 	Sua          *UserAgent      `json:"sua,omitempty"`            // Structured User agent. It's more accurate than UA
 	Geo          *Geo            `json:"geo,omitempty"`            // Location of the device assumed to be the user’s current location
-	DNT          int             `json:"dnt,omitempty"`            // "1": Do not track
-	LMT          int             `json:"lmt,omitempty"`            // "1": Limit Ad Tracking
+	DNT          int8            `json:"dnt,omitempty"`            // "1": Do not track
+	LMT          int8            `json:"lmt,omitempty"`            // "1": Limit Ad Tracking
 	IP           string          `json:"ip,omitempty"`             // IPv4
 	IPv6         string          `json:"ipv6,omitempty"`           // IPv6
 	DeviceType   DeviceType      `json:"devicetype,omitempty"`     // The general type of device.
@@ -19,12 +19,12 @@ type Device struct {
 	OS           string          `json:"os,omitempty"`             // Device OS
 	OSVersion    string          `json:"osv,omitempty"`            // Device OS version
 	HWVersion    string          `json:"hwv,omitempty"`            // Hardware version of the device (e.g., "5S" for iPhone 5S).
-	Height       int             `json:"h,omitempty"`              // Physical height of the screen in pixels.
-	Width        int             `json:"w,omitempty"`              // Physical width of the screen in pixels.
-	PPI          int             `json:"ppi,omitempty"`            // Screen size as pixels per linear inch.
+	Height       int16           `json:"h,omitempty"`              // Physical height of the screen in pixels.
+	Width        int16           `json:"w,omitempty"`              // Physical width of the screen in pixels.
+	PPI          int16           `json:"ppi,omitempty"`            // Screen size as pixels per linear inch.
 	PixelRatio   float64         `json:"pxratio,omitempty"`        // The ratio of physical pixels to device independent pixels.
-	JS           int             `json:"js,omitempty"`             // Javascript status ("0": Disabled, "1": Enabled)
-	GeoFetch     int             `json:"geofetch,omitempty"`       // Indicates if the geolocation API will be available to JavaScript code running in the banner,
+	JS           int8            `json:"js,omitempty"`             // Javascript status ("0": Disabled, "1": Enabled)
+	GeoFetch     int16           `json:"geofetch,omitempty"`       // Indicates if the geolocation API will be available to JavaScript code running in the banner,
 	FlashVersion string          `json:"flashver,omitempty"`       // Flash version
 	Language     string          `json:"language,omitempty"`       // Browser language using ISO-639-1-alpha-2. Only one of language or langb should be present.
 	LanguageB    string          `json:"langb,omitempty"`          // Browser language using IETF BCP 47. Only one of language or langb should be present.

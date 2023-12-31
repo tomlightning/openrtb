@@ -9,7 +9,7 @@ import "github.com/goccy/go-json"
 // example might be a video impression embedded in an iframe on an unknown web property or device.
 type Content struct {
 	ID                 string            `json:"id,omitempty"`                 // ID uniquely identifying the content.
-	Episode            int               `json:"episode,omitempty"`            // Episode number (typically applies to video content).
+	Episode            int8              `json:"episode,omitempty"`            // Episode number (typically applies to video content).
 	Title              string            `json:"title,omitempty"`              // Content title.
 	Series             string            `json:"series,omitempty"`             // Content series.
 	Season             string            `json:"season,omitempty"`             // Content season.
@@ -33,7 +33,7 @@ type Content struct {
 	Length             int               `json:"len,omitempty"`                // Length of content in seconds; appropriate for video or audio.
 	Language           string            `json:"language,omitempty"`           // Content language using ISO-639-1-alpha-2.
 	LanguageB          string            `json:"langb,omitempty"`              // Content language using IETF BCP 47. Only one of language or langb should be present.
-	Embeddable         int               `json:"embeddable,omitempty"`         // Indicator of whether or not the content is embeddable (e.g., an embeddable video player), where 0 = no, 1 = yes.
+	Embeddable         int8              `json:"embeddable,omitempty"`         // Indicator of whether or not the content is embeddable (e.g., an embeddable video player), where 0 = no, 1 = yes.
 	Data               []Data            `json:"data,omitempty"`               // Additional content data.
 	Network            *ChannelEntity    `json:"network,omitempty"`            // Details about the network the content is on.
 	Channel            *ChannelEntity    `json:"channel,omitempty"`            // Details about the channel the content is on.
