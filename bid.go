@@ -41,12 +41,12 @@ type Bid struct {
 	DealID           string              `json:"dealid,omitempty"`         // DealID extension of private marketplace deals
 	LangB            string              `json:"langb,omitempty"`          // Language of the creative using IETF BCP 47. Only one of language or langb should be present.
 	Price            float64             `json:"price"`                    // Bid price in CPM. Suggests using integer math for accounting to avoid rounding errors.
-	Width            int                 `json:"w,omitempty"`              // Width of the ad in pixels.
-	Height           int                 `json:"h,omitempty"`              // Height of the ad in pixels.
-	WidthRatio       int                 `json:"wratio,omitempty"`         // Relative width of the creative when expressing size as a ratio.
-	HeightRatio      int                 `json:"hratio,omitempty"`         // Relative height of the creative when expressing size as a ratio.
-	Duration         int                 `json:"dur,omitempty"`            // Duration of the video or audio creative in seconds.
-	Exp              int                 `json:"exp,omitempty"`            // Advisory as to the number of seconds the bidder is willing to wait between the auction and the actual impression.
+	Width            int16               `json:"w,omitempty"`              // Width of the ad in pixels.
+	Height           int16               `json:"h,omitempty"`              // Height of the ad in pixels.
+	WidthRatio       int16               `json:"wratio,omitempty"`         // Relative width of the creative when expressing size as a ratio.
+	HeightRatio      int16               `json:"hratio,omitempty"`         // Relative height of the creative when expressing size as a ratio.
+	Duration         int16               `json:"dur,omitempty"`            // Duration of the video or audio creative in seconds.
+	Exp              int16               `json:"exp,omitempty"`            // Advisory as to the number of seconds the bidder is willing to wait between the auction and the actual impression.
 	API              APIFramework        `json:"api,omitempty"`            // API required by the markup if applicable, NOTE: for ORTB ver <= 2.5 APIFramework supported is 1 to 6.
 	Protocol         Protocol            `json:"protocol,omitempty"`       // Video response protocol of the markup if applicable
 	MediaRating      IQGRating           `json:"qagmediarating,omitempty"` // Creative media rating per IQG guidelines.
