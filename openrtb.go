@@ -831,8 +831,8 @@ type Segment struct {
 // coppa flag signals whether or not the request falls under the United States Federal Trade Commission's
 // regulations for the United States Children's Online Privacy Protection Act ("COPPA").
 type Regulations struct {
-	Ext   json.RawMessage `json:"ext,omitempty"` // -
-	COPPA int8            `json:"coppa"`         // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
+	Ext   json.RawMessage `json:"ext,omitempty"`   // -
+	COPPA int8            `json:"coppa,omitempty"` // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
 }
 
 // Format object represents an allowed size (i.e., height and width combination) for a banner impression.
