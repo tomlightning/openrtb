@@ -786,7 +786,7 @@ type Geo struct {
 	Longitude     float32         `json:"lon,omitempty"`           // Longitude from -180 to 180
 	Type          LocationType    `json:"type,omitempty"`          // Indicate the source of the geo data
 	IPService     IPLocation      `json:"ipservice,omitempty"`     // Service or provider used to determine geolocation from IP address if applicable
-	UTCOffset     int8            `json:"utcoffset,omitempty"`     // Local time as the number +/- of minutes from UTC
+	UTCOffset     int16           `json:"utcoffset,omitempty"`     // Local time as the number +/- of minutes from UTC
 }
 
 // User object contains information known or derived about the human user of the device (i.e., the
