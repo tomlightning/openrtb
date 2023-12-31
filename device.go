@@ -29,7 +29,7 @@ type Device struct {
 	MacMD5       string          `json:"macmd5,omitempty"`         // MD5 hashed device ID; IMEI when available, else MEID or ESN
 	Sua          *UserAgent      `json:"sua,omitempty"`            // Structured User agent. It's more accurate than UA
 	Geo          *Geo            `json:"geo,omitempty"`            // Location of the device assumed to be the user’s current location
-	PixelRatio   float64         `json:"pxratio,omitempty"`        // The ratio of physical pixels to device independent pixels.
+	PixelRatio   float32         `json:"pxratio,omitempty"`        // The ratio of physical pixels to device independent pixels.
 	Height       int16           `json:"h,omitempty"`              // Physical height of the screen in pixels.
 	Width        int16           `json:"w,omitempty"`              // Physical width of the screen in pixels.
 	PPI          int16           `json:"ppi,omitempty"`            // Screen size as pixels per linear inch.

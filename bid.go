@@ -40,7 +40,7 @@ type Bid struct {
 	Language         string              `json:"language,omitempty"`       // Language of the creative using ISO-639-1-alpha-2.
 	DealID           string              `json:"dealid,omitempty"`         // DealID extension of private marketplace deals
 	LangB            string              `json:"langb,omitempty"`          // Language of the creative using IETF BCP 47. Only one of language or langb should be present.
-	Price            float64             `json:"price"`                    // Bid price in CPM. Suggests using integer math for accounting to avoid rounding errors.
+	Price            float32             `json:"price"`                    // Bid price in CPM. Suggests using integer math for accounting to avoid rounding errors.
 	Width            int16               `json:"w,omitempty"`              // Width of the ad in pixels.
 	Height           int16               `json:"h,omitempty"`              // Height of the ad in pixels.
 	WidthRatio       int16               `json:"wratio,omitempty"`         // Relative width of the creative when expressing size as a ratio.

@@ -27,21 +27,21 @@ type Video struct {
 	CompanionTypes  []CompanionType     `json:"companiontype,omitempty"`  // -
 	Ext             json.RawMessage     `json:"ext,omitempty"`            // -
 	PodID           string              `json:"podid,omitempty"`          // Pod id unique identifier for video ad pod
-	MinDuration     int                 `json:"minduration,omitempty"`    // Minimum video ad duration in seconds
-	MaxDuration     int                 `json:"maxduration,omitempty"`    // Maximum video ad duration in seconds
-	Width           int                 `json:"w"`                        // Width of the player in pixels
-	Height          int                 `json:"h"`                        // Height of the player in pixels
-	Skip            int                 `json:"skip,omitempty"`           // Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
-	SkipMin         int                 `json:"skipmin,omitempty"`        // Videos of total duration greater than this number of seconds can be skippable
-	SkipAfter       int                 `json:"skipafter,omitempty"`      // Number of seconds a video must play before skipping is enabled
-	Sequence        int                 `json:"sequence,omitempty"`       // Default: 1
-	MaxExtended     int                 `json:"maxextended,omitempty"`    // Maximum extended video ad duration
 	MinBitrate      int                 `json:"minbitrate,omitempty"`     // Minimum bit rate in Kbps
 	MaxBitrate      int                 `json:"maxbitrate,omitempty"`     // Maximum bit rate in Kbps
 	BoxingAllowed   *int                `json:"boxingallowed,omitempty"`  // If exchange publisher has rules preventing letter boxing
-	PodDuration     int                 `json:"poddur,omitempty"`         // Pod Duration total amount of time in seconds that advertisers may fill for a video ad pod
-	MinCPMPerSecond float64             `json:"mincpmpersec,omitempty"`   //   Minimum CPM per second. This is a price floor for the portion of a video ad pod
+	MinCPMPerSecond float32             `json:"mincpmpersec,omitempty"`   //   Minimum CPM per second. This is a price floor for the portion of a video ad pod
+	MinDuration     int16               `json:"minduration,omitempty"`    // Minimum video ad duration in seconds
+	MaxDuration     int16               `json:"maxduration,omitempty"`    // Maximum video ad duration in seconds
+	Width           int16               `json:"w"`                        // Width of the player in pixels
+	Height          int16               `json:"h"`                        // Height of the player in pixels
+	SkipMin         int16               `json:"skipmin,omitempty"`        // Videos of total duration greater than this number of seconds can be skippable
+	SkipAfter       int16               `json:"skipafter,omitempty"`      // Number of seconds a video must play before skipping is enabled
+	Sequence        int16               `json:"sequence,omitempty"`       // Default: 1
+	MaxExtended     int16               `json:"maxextended,omitempty"`    // Maximum extended video ad duration
+	PodDuration     int16               `json:"poddur,omitempty"`         // Pod Duration total amount of time in seconds that advertisers may fill for a video ad pod
 	StartDelay      StartDelay          `json:"startdelay,omitempty"`     // Indicates the start delay in seconds
+	Skip            int8                `json:"skip,omitempty"`           // Indicates if the player will allow the video to be skipped, where 0 = no, 1 = yes.
 	Protocol        Protocol            `json:"protocol,omitempty"`       // Video bid response protocols DEPRECATED
 	Linearity       VideoLinearity      `json:"linearity,omitempty"`      // Indicates whether the ad impression is linear or non-linear
 	PodSequence     PodSequence         `json:"podseq,omitempty"`         // Pod Sequence position of the video ad pod
