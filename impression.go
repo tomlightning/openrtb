@@ -34,7 +34,7 @@ type Impression struct {
 	PMP                   *PMP            `json:"pmp,omitempty"`               // A reference to the PMP object containing any Deals eligible for the impression object.
 	BidFloor              float64         `json:"bidfloor,omitempty"`          // Bid floor for this impression in CPM
 	Secure                NumberOrString  `json:"secure"`                      // Flag to indicate whether the impression requires secure HTTPS URL creative assets and markup.
-	Exp                   int16           `json:"exp,omitempty"`               // Advisory as to the number of seconds that may elapse between the auction and the actual impression.
+	Exp                   int32           `json:"exp,omitempty"`               // Advisory as to the number of seconds that may elapse between the auction and the actual impression.
 	Interstitial          int8            `json:"instl"`                       // Interstitial, Default: 0 ("1": Interstitial, "0": Something else)
 }
 
