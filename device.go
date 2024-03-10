@@ -32,7 +32,7 @@ type Device struct {
 	PixelRatio   float64         `json:"pxratio,omitempty"`        // The ratio of physical pixels to device independent pixels.
 	Height       int16           `json:"h,omitempty"`              // Physical height of the screen in pixels.
 	Width        int16           `json:"w,omitempty"`              // Physical width of the screen in pixels.
-	PPI          int16           `json:"ppi,omitempty"`            // Screen size as pixels per linear inch.
+	PPI          int32           `json:"ppi,omitempty"`            // Screen size as pixels per linear inch.
 	GeoFetch     int16           `json:"geofetch,omitempty"`       // Indicates if the geolocation API will be available to JavaScript code running in the banner,
 	DNT          int8            `json:"dnt,omitempty"`            // "1": Do not track
 	LMT          int8            `json:"lmt,omitempty"`            // "1": Limit Ad Tracking
