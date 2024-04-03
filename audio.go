@@ -23,7 +23,7 @@ type Audio struct {
 	Ext            json.RawMessage     `json:"ext,omitempty"`           // -
 	MinDuration    int16               `json:"minduration,omitempty"`   // Minimum video ad duration in seconds
 	MaxDuration    int16               `json:"maxduration,omitempty"`   // Maximum video ad duration in seconds
-	StartDelay     StartDelay          `json:"startdelay,omitempty"`    // Indicates the start delay in seconds
+	StartDelay     StartDelay          `json:"startdelay"`              // Indicates the start delay in seconds
 	Sequence       int16               `json:"sequence,omitempty"`      // Default: 1
 	MaxExtended    int16               `json:"maxextended,omitempty"`   // Maximum extended video ad duration
 	MinBitrate     int16               `json:"minbitrate,omitempty"`    // Minimum bit rate in Kbps
