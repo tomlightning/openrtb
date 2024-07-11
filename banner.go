@@ -10,9 +10,9 @@ import "github.com/goccy/go-json"
 // opportunities of the same size are available on a page.
 type Banner struct {
 	Formats      []Format            `json:"format,omitempty"`   // Array of format objects representing the banner sizes permitted.
-	BlockedTypes []BannerType        `json:"btype,omitempty"`    // Blocked banner types
+	BlockedTypes []BannerType        `json:"btype"`              // Blocked banner types
 	BlockedAttrs []CreativeAttribute `json:"battr,omitempty"`    // Blocked creative attributes
-	MIMEs        []string            `json:"mimes,omitempty"`    // Whitelist of content MIME types supported
+	MIMEs        []string            `json:"mimes"`              // Whitelist of content MIME types supported
 	ExpDirs      []ExpDir            `json:"expdir,omitempty"`   // Specify properties for an expandable ad
 	APIs         []APIFramework      `json:"api,omitempty"`      // List of supported API frameworks
 	Ext          json.RawMessage     `json:"ext,omitempty"`      // -
