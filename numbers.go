@@ -16,7 +16,7 @@ type NumberOrString int
 func (n *NumberOrString) UnmarshalJSON(data []byte) (err error) {
 	var v int
 
-	if len(data) > 2 && data[0] == '"' && data[len(data)-1] == '"' {
+	if len(data) > 2 && data[0] == '"' {
 		err = json.Unmarshal(data[1:len(data)-1], &v)
 	} else {
 		err = json.Unmarshal(data, &v)
@@ -37,7 +37,7 @@ type StringOrNumber string
 
 // UnmarshalJSON implements json.Unmarshaler
 func (n *StringOrNumber) UnmarshalJSON(data []byte) error {
-	if len(data) >= 2 && data[0] == '"' && data[len(data)-1] == '"' {
+	if len(data) >= 2 && data[0] == '"' {
 		var v string
 		if err := json.Unmarshal(data, &v); err != nil {
 			return err
