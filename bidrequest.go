@@ -31,9 +31,9 @@ type BidRequest struct {
 	Site              *Site             `json:"site,omitempty"`    // -
 	App               *App              `json:"app,omitempty"`     // -
 	Device            *Device           `json:"device,omitempty"`  // -
-	User              *json.RawMessage  `json:"user,omitempty"`    // -
+	User              *User             `json:"user,omitempty"`    // -
 	Source            *Source           `json:"source,omitempty"`  // A Source object that provides data about the inventory source and which entity makes the final decision
-	Regulations       *json.RawMessage  `json:"regs,omitempty"`    // -
+	Regulations       *Regulations      `json:"regs,omitempty"`    // -
 	TimeMax           int16             `json:"tmax,omitempty"`    // Maximum amount of time in milliseconds to submit a bid
 	Test              int8              `json:"test,omitempty"`    // Indicator of test mode in which auctions are not billable, where 0 = live mode, 1 = test mode
 	AuctionType       int8              `json:"at"`                // Auction type, where 1 = First Price, 2 = Second Price Plus. Exchange-specific auction types can be defined using values greater than 500.
