@@ -34,9 +34,9 @@ type Device struct {
 	Width        int16           `json:"w,omitempty"`              // Physical width of the screen in pixels.
 	PPI          int32           `json:"ppi,omitempty"`            // Screen size as pixels per linear inch.
 	GeoFetch     int16           `json:"geofetch,omitempty"`       // Indicates if the geolocation API will be available to JavaScript code running in the banner,
-	DNT          int8            `json:"dnt,omitempty"`            // "1": Do not track
-	LMT          int8            `json:"lmt,omitempty"`            // "1": Limit Ad Tracking
+	DNT          int8            `json:"dnt"`                      // "1": Do not track
+	LMT          int8            `json:"lmt"`                      // "1": Limit Ad Tracking
 	DeviceType   DeviceType      `json:"devicetype,omitempty"`     // The general type of device.
-	JS           int8            `json:"js,omitempty"`             // Javascript status ("0": Disabled, "1": Enabled)
+	JS           int8            `json:"js"`                       // Javascript status ("0": Disabled, "1": Enabled)
 	ConnType     ConnType        `json:"connectiontype,omitempty"` // Network connection type.
 }
